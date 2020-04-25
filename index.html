@@ -1,43 +1,273 @@
-﻿<!DOCTYPE HTML>
-
-<html class="no-js">
+﻿<html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-  <title>Khalsa stationry</title>
-  <meta name="description" content=""/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About me</title>
 <style>
+* {
+  
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: sans-serif;
+}
+img {
+  width: 250px;
+  hight:400px;
+  border-radius: 8%;
+  position:relative;
+  
+}
+nav {
+  background: #222;
+  padding: 5px 20px;
+}
 
+ul {
+  list-style-type: none;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+.logo a:hover {
+  text-decoration: none;
+}
+.menu li {
+  font-size: 16px;
+  padding: 15px 5px;
+  white-space: nowrap;
+}
+.logo a,
+.toggle a {
+  font-size: 20px;
+}
+.button.secondary {
+  border-bottom: 1px #444 solid;
+}
+
+/* Mobile menu */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.toggle {
+  order: 1;
+}
+.item.button {
+  order: 2;
+}
+.item {
+  width: 100%;
+  text-align: center;
+  order: 3;
+  display: none;
+}
+.item.active {
+  display: block;
+}
+
+/* Navbar Toggle */
+.toggle {
+  cursor:pointer;
+}
+.bars {
+  background: #999;
+  display: inline-block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+.bars:before,
+.bars:after {
+  background: #999;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+.bars:before {
+  top: 5px;
+}
+.bars:after {
+  top: -5px;
+}
+
+/* Tablet menu */
+@media all and (min-width: 468px) {
+  .menu {
+      justify-content: center;
+  }
+
+  .logo {
+      flex: 1;
+  }
+
+  .item.button {
+      width: auto;
+      order: 1;
+      display: block;
+  }
+  .toggle {
+      order: 2;
+  }
+  .button.secondary {
+      border: 0;
+  }
+  .button a {
+      padding: 7.5px 15px;
+      background: teal;
+      border: 1px #006d6d solid;
+      border-radius:50em;
+  }
+  .button.secondary a {
+      background: transparent;    
+  }
+  .button a:hover {
+      text-decoration: none;
+      transition:all .25s;
+  }
+  .button:not(.secondary) a:hover {
+      background: #006d6d;
+      border-color: #005959;
+  }
+  .button.secondary a:hover {
+      color: #ddd;
+  } 
+}
+
+/* Desktop menu */
+@media all and (min-width: 768px) {
+  .item {
+      display: block;
+      width: auto;
+  }
+  .toggle {
+      display: none;
+  }
+  .logo {
+      order: 0;
+  }
+  .item {
+      order: 1;
+  }
+  .button {
+      order: 2;
+  }
+  .menu li {
+      padding: 15px 10px;
+  }
+  .menu li.button {
+      padding-right: 0;
+  }
+}
+/* body menu */
+.grid {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      justify-content:center;
+      text-align:center;
+      align-items:center;
+      grid-gap:1rem;
+      padding:1rem,80px;
+      
+  }
+  .post-box {
+      padding:1rem;
+      color:#ddd;
+      cursor:pointer;
+      font-size:2Sem;
+  }
+  .post-title {
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding:0.5rem;
+      margin-bottom:0.5rem;
+  }
+body{
+  position:relative;
+  background: #642b73;
+  background: -webkit-linear-gradient(to right, #642b73, #c6426e);
+  background: linear-gradient(to right, #642b73, #c6426e);
+}
 
 
 </style>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+    crossorigin="anonymous"></script>
+    <script>
+    $(function() {
+    $(".toggle").on("click", function() {
+        if ($(".item").hasClass("active")) {
+            $(".item").removeClass("active");
+        } else {
+            $(".item").addClass("active");
+        }
+    });
+});
+
+    </script>
 
 </head>
-
-
-
 <body>
-  <header>
-<img class="logo" href="" alt="logo">
     <nav>
-     <ul class="nav-link">
-        <li><a href="#">contect</a></li>
-        <li><a href="#">cart</a></li>
-         <li><a href="#">Submit</a></li>
-        <a class="cta" href="#">contect</a>
-</ul>
-</nav>
+        <ul class="menu">
+            <li class="logo"><a href="#">Madmandy.dev</a></li>
+            <li class="item"><a href="#">Home</a></li>
+            <li class="item"><a href="#">About</a></li>
+            <li class="item"><a href="#">Services</a></li>
+            </li>
+            <li class="item button"><a href="#">Log In</a></li>
+            <li class="item button secondary"><a href="#">Sign Up</a></li>
+            <li class="toggle"><span class="bars"></span></li>
+        </ul>
+    </nav>
+
+<div class="grid">
+
+<div class="post-box">
+<div class="post-title">
+<a href="#" >Mandy</a>
+<img alt="Go Karts! 2020"src="https://lh5.googleusercontent.com/proxy/nJi3GvafqFgi3gZJ_cxPw3qLiFKW6YLSQ4n5QwAVqEuhqiPJHzC_FvBfSkIcyJkI8MSHj0au6cOrbuGKJH7EMh08ckueFmTf81iW_38f3DJrv_s-tw8izDxPu7RpBt3Yri-P2rZgW7zcaGJ_aMuJecnlyJmD_Rgfj3d-djDO7xvSUqSKqviJLVFIt-M7LM2JH4bHW_VXA-K7j7xsGZw1OaYxuw1M107obKJlcVd6af8=w480">
+<p>This is mandy Blog.</p>
+ </div></div>
+<div class="post-box">
+<div class="post-title">
+<a href="#" >Mandy</a>
+<img alt="Go Karts! 2020"src="https://lh5.googleusercontent.com/proxy/nJi3GvafqFgi3gZJ_cxPw3qLiFKW6YLSQ4n5QwAVqEuhqiPJHzC_FvBfSkIcyJkI8MSHj0au6cOrbuGKJH7EMh08ckueFmTf81iW_38f3DJrv_s-tw8izDxPu7RpBt3Yri-P2rZgW7zcaGJ_aMuJecnlyJmD_Rgfj3d-djDO7xvSUqSKqviJLVFIt-M7LM2JH4bHW_VXA-K7j7xsGZw1OaYxuw1M107obKJlcVd6af8=w480">
+<p>This is mandy Blog.</p>
+ </div></div>
+<div class="post-box">
+<div class="post-title">
+<a href="#" >Mandy</a>
+<img alt="Go Karts! 2020"src="https://lh5.googleusercontent.com/proxy/nJi3GvafqFgi3gZJ_cxPw3qLiFKW6YLSQ4n5QwAVqEuhqiPJHzC_FvBfSkIcyJkI8MSHj0au6cOrbuGKJH7EMh08ckueFmTf81iW_38f3DJrv_s-tw8izDxPu7RpBt3Yri-P2rZgW7zcaGJ_aMuJecnlyJmD_Rgfj3d-djDO7xvSUqSKqviJLVFIt-M7LM2JH4bHW_VXA-K7j7xsGZw1OaYxuw1M107obKJlcVd6af8=w480">
+<p>This is mandy Blog.</p>
+</div></div>
+<div class="post-box">
+<div class="post-title">
+<a href="#" >Mandy</a>
+<img alt="Go Karts! 2020"src="https://lh5.googleusercontent.com/proxy/nJi3GvafqFgi3gZJ_cxPw3qLiFKW6YLSQ4n5QwAVqEuhqiPJHzC_FvBfSkIcyJkI8MSHj0au6cOrbuGKJH7EMh08ckueFmTf81iW_38f3DJrv_s-tw8izDxPu7RpBt3Yri-P2rZgW7zcaGJ_aMuJecnlyJmD_Rgfj3d-djDO7xvSUqSKqviJLVFIt-M7LM2JH4bHW_VXA-K7j7xsGZw1OaYxuw1M107obKJlcVd6af8=w480">
+<p>This is mandy Blog.</p>
+ 
+</div></div>
+
+</div>
 
 
-
-
-
-</header>
-  <div></div>
 
 </body>
-
-
 </html>
